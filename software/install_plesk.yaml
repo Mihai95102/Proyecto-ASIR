@@ -1,8 +1,10 @@
-- hosts: localhost
-  become: true
+---
+- name: Playbook para desplegar Plesk
+  hosts: localhost
+  become: yes
   vars:
-    plesk_email: "admin@example.com"
-    plesk_password: "P@ssw0rd"
+    plesk_email: "mbut182@g.educaand.es"
+    plesk_password: "admin"
     php_modules:
       - php7.4-mysql
       - php7.4-curl
@@ -13,8 +15,9 @@
       - php7.4-mbstring
       - php7.4-zip
   tasks:
-    - name: Actualizar la lista de paquetes
-      apt: update_cache=yes
+    - name: Actualizar los paquetes
+      apt:
+        update_cache: yes
 
     - name: Instalar wget
       apt:
@@ -23,12 +26,12 @@
 
     - name: Descargar el instalador de Plesk
       get_url:
-        url: https://autoinstall.plesk.com/plesk-installer
+        url: https://installer.plesk.com/plesk-installer
         dest: /tmp/plesk-installer
-        mode: 'u+x'
+        mode: 'a+x'
 
     - name: Instalar Plesk
-      command: /tmp/plesk-installer --web-interface --all-features --admin_password={{ plesk_password }} --admin_email={{ plesk_email }}
+      command: sudo ./tmp/plesk-installer
 
     - name: Instalar módulos de PHP
       apt:
@@ -40,16 +43,16 @@
         name: postfix
         state: present
 
-    - name: Configurar Plesk
-      shell: |
-        plesk bin settings --set panel_ini_components=all
-        plesk bin poweruser --off
-        plesk bin mail --off
-        plesk bin autoresponder --off
-        plesk bin spamassassin --off
-        plesk bin antivirus --off
-        plesk bin mail_auth_view --off
-        plesk bin dns --off
-        plesk bin smarthost --off
-        plesk bin mchk --with-spam
-        plesk bin extension --install-url https://ext.plesk.com/packages/c4abeef6-16a6-4a08-bc12-c68a4dee4139-panel-landing-page/download --force
+    # - name: Configurar Plesk
+    #   shell: |
+    #     plesk bin settings --set panel_ini_components=all
+    #     plesk bin poweruser --off
+    #     plesk bin mail --off
+    #     plesk bin autoresponder --off
+    #     plesk bin spamassassin --off
+    #     plesk bin antivirus --off
+    #     plesk bin mail_auth_view --off
+    #     plesk bin dns --off
+    #     plesk bin smarthost --off
+    #     plesk bin mchk --with-spam
+    #     plesk bin extension --install-url https://ext.plesk.com/packages/c4abeef6-16a6-4a08-bc12-c68a4dee4139-panel-landing-page/download --force
