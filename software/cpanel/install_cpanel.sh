@@ -11,5 +11,5 @@ sudo apt-get install curl -y
 # Instalamos PERL
 sudo apt-get install perl
 
-# Ejecutamos el instalador de CPanel usando WGET
+# Ejecutamos el instalador de CPanel usando CURL
 cd /home && curl -o latest -L https://securedownloads.cpanel.net/latest && sh latest
