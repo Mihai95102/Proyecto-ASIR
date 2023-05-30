@@ -1,0 +1,40 @@
+---
+- name: Playbook para instalar Certbot
+  hosts: balancer
+  become: yes
+
+  vars_files:
+    - ../vars/variables.yml
+
+  tasks:
+
+  - name: Instalamos snap
+    snap:
+      name: core
+      state: present
+
+  - name: Actualizamos snap
+    shell: snap refresh core
+
+  - name: Eliminamos si existiese alguna instalación previa de certbot con apt
+    snap:
+      name: certbot
+      state: absent
+
+  - name: Instalamos el cliente de Certbot con snapd
+    snap: 
+      name: certbot
+      state: present
+      classic: true
+
+  - name: Creamos una alias para el comando certbot
+    file: 
+      src: /snap/bin/certbot 
+      dest: /usr/bin/certbot
+      state: link
+
+  - name: Obtenemos el certificado y configuramos el servidor web Apache
+    shell: certbot --apache -m {{ correo }} --agree-tos --no-eff-email -d {{ dominio }}
+
+  - name: Comprobamos que existe un temporizador que se encarga de renovar los certificados de forma automática
+    shell: systemctl list-timers
