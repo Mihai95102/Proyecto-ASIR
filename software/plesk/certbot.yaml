@@ -1,6 +1,6 @@
 ---
 - name: Playbook para instalar Certbot
-  hosts: balancer
+  hosts: plesk
   become: yes
 
   vars_files:
