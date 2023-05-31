@@ -9,7 +9,7 @@ source ../vars/variables.sh
 sudo apt-get update -y
 
 # Creamos un dominio
-# plesk bin domain --create $CREATE -hosting true -ip $HOST_IP -login $ROL -passwd $PASSWD
+plesk bin domain --create $CREATE -hosting true -ip $HOST_IP -login $ROL -passwd $PASSWD
 
 # Creamos un rol para los usuarios
 plesk bin role --create $ROL \

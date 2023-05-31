@@ -15,7 +15,7 @@ STATE=ALM
 
 # Creación Plesk
 CREATE=proyectoplesk.ddns.net
-HOST_IP=34.230.204.213
+HOST_IP=172.31.87.240
 ROL=gestion
 OWNER=admin
 
