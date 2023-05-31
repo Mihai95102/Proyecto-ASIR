@@ -46,4 +46,4 @@ plesk bin init_conf --init \
 mysql -u root -e "use psa; update misc set val='es-ES' where param='def_locale'; update misc set val='es-ES' where param='admin_locale';"
 
 # Cambiamos la interfaz de Plesk
-plesk bin poweruser --off
+# plesk bin poweruser --off
