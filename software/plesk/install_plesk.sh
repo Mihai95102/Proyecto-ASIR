@@ -5,6 +5,12 @@ set -x
 # Actualizamos los paquetes
 apt-get update -y
 
+# Instalamos Apache
+apt-get install apache2
+
+# Ejecutamos el script de Certbot para solicitar el certificado
+sudo ./certbot.sh
+
 # Instalamos el comando WGET
 apt-get install wget
 
@@ -29,7 +35,7 @@ plesk bin init_conf --init \
     -netmask 255.255.255.0 \
     -iface eth0 \
     -ip-type shared \
-    -hostname plesk.ddns.net \
+    -hostname hostingplesk.ddns.net \
     -name "Mihai" \
     -passwd @W62dv8ui \
     -phone 642083481 \
