@@ -2,6 +2,9 @@
 
 set -x
 
+# Variables
+source ../vars/variables.sh
+
 # Actualizamos los paquetes
 apt-get update -y
 
@@ -9,7 +12,7 @@ apt-get update -y
 apt-get install apache2
 
 # Ejecutamos el script de Certbot para solicitar el certificado
-sudo ./certbot.sh
+sudo ./certbot_plesk.sh
 
 # Instalamos el comando WGET
 apt-get install wget
@@ -31,21 +34,21 @@ sudo ./plesk-installer --select-product-id plesk --select-release-latest --insta
 
 # Configuración postinstalación de Plesk
 plesk bin init_conf --init \
-    -default-ip 34.230.204.213 \
-    -netmask 255.255.255.0 \
-    -iface eth0 \
-    -ip-type shared \
-    -hostname hostingplesk.ddns.net \
-    -name "Mihai" \
-    -passwd @W62dv8ui \
-    -phone 642083481 \
-    -email mbut182@g.educaand.es \
+    -default-ip $DEFAULT_IP \
+    -netmask $NETMASK \
+    -iface $IFACE \
+    -ip-type $IP_TYPE \
+    -hostname $HOSTING \
+    -name $NAME \
+    -passwd $PASSWD \
+    -phone $PHONE \
+    -email $EMAIL \
     -company "SKYNET S.L" \
     -address "Calle Ave del Paraíso 2" \
-    -city "Almería" \
-    -zip 04117 \
-    -country ES \
-    -state ALM \
+    -city $CITY \
+    -zip $ZIP \
+    -country $COUNTRY \
+    -state $STATE \
     -trial_license true
 
 # Cambiamos el idioma de la interfaz de Plesk

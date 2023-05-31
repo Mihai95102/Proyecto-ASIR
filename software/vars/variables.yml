@@ -1,7 +1,0 @@
-# Variables de configuración del balanceador
-ip_http_server_1: 34.230.204.213 # Plesk
-ip_http_server_2: 44.195.65.162 #Plesk_2
-
-# Variable CertBot
-correo: mbut182@g.educaand.es
-dominio: plesk.ddns.net
