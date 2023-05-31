@@ -3,10 +3,10 @@
 set -x
 
 # Actualizamos los paquetes
-sudo apt-get update -y
+apt-get update -y
 
 # Instalamos el comando WGET
-sudo apt-get install wget
+apt-get install wget
 
 # Descargamos el instalador de Plesk usando WGET
 wget https://autoinstall.plesk.com/plesk-installer
@@ -39,10 +39,11 @@ plesk bin init_conf --init \
     -city "Almería" \
     -zip 04117 \
     -country ES \
-    -state ALM
+    -state ALM \
+    -trial_license true
 
 # Cambiamos el idioma de la interfaz de Plesk
-plesk bin admin --update -locale -es_ES
+mysql -u root -e "use psa; update misc set val='es-ES' where param='def_locale'; update misc set val='es-ES' where param='admin_locale';"
 
 # Cambiamos la interfaz de Plesk
-sudo plesk bin poweruser --off
+plesk bin poweruser --off
