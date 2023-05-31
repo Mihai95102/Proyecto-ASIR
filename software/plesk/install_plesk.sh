@@ -22,3 +22,27 @@ chmod +x ./plesk-installer
 
 # Ejecutamos el instalador de Plesk
 sudo ./plesk-installer --select-product-id plesk --select-release-latest --installation-type Recommended
+
+# Configuración postinstalación de Plesk
+plesk bin init_conf --init \
+    -default-ip 34.230.204.213 \
+    -netmask 255.255.255.0 \
+    -iface eth0 \
+    -ip-type shared \
+    -hostname plesk.ddns.net \
+    -name "Mihai" \
+    -passwd @W62dv8ui \
+    -phone 642083481 \
+    -email mbut182@g.educaand.es \
+    -company "SKYNET S.L" \
+    -address "Calle Ave del Paraíso 2" \
+    -city "Almería" \
+    -zip 04117 \
+    -country ES \
+    -state ALM
+
+# Cambiamos el idioma de la interfaz de Plesk
+plesk bin admin --update -locale -es_ES
+
+# Cambiamos la interfaz de Plesk
+sudo plesk bin poweruser --off
