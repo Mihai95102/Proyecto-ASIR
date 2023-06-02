@@ -54,5 +54,5 @@ plesk bin init_conf --init \
 # Cambiamos el idioma de la interfaz de Plesk
 mysql -u root -e "use psa; update misc set val='es-ES' where param='def_locale'; update misc set val='es-ES' where param='admin_locale';"
 
-# Cambiamos la interfaz de Plesk
-# plesk bin poweruser --off
+# Ejecutamos el script de creación de dominio, usuario y rol
+sudo ./create_plesk.sh
