@@ -1,0 +1,3 @@
+infraestructura/.terraform
+infraestructura/.terraform.lock.hcl
+infraestructura/terraform.tfstate
