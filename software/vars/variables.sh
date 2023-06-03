@@ -22,3 +22,7 @@ OWNER=admin
 # CertBot
 CORREO=mbut182@g.educaand.es
 DOMINIO=hostingplesk.ddns.net
+
+# Base de Datos
+USUARIO1=plesk1
+USUARIO2=plesk2
