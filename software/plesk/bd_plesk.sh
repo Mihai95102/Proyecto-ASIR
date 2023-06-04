@@ -16,7 +16,7 @@ cp conf/mysqld.cnf /etc/mysql/mysql.conf.d/mysqld.cnf
 
 # Creamos bases de datos, usuarios y permisos
 mysql -u root -e "CREATE DATABASE host1_psa;"
-mysql -u root -e "CREATE USER '$USUARIOPLESK'@'%' IDENTIFIED BY '$PASSWD';"
+mysql -u root -e "CREATE USER '$USUARIOPLESK'@'%' IDENTIFIED BY 'hola';"
 mysql -u root -e "GRANT ALL ON host1_psa.* TO '$USUARIOPLESK'@'%' WITH GRANT OPTION;"
 
 mysql -u root -e "CREATE DATABASE host1_apsc;"
