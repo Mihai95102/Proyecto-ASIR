@@ -24,5 +24,7 @@ CORREO=mbut182@g.educaand.es
 DOMINIO=hostingplesk.ddns.net
 
 # Base de Datos
-USUARIO1=plesk1
+USUARIOPLESK=plesk1
+USUARIOAPSC=apsc1
+USUARIOMAIL=mail1
 USUARIO2=plesk2
