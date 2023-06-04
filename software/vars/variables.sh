@@ -1,9 +1,9 @@
 # Instalación Plesk
-DEFAULT_IP=54.159.9.199
-NETMASK=255.255.255.0
-IFACE=eth0
-IP_TYPE=shared
-HOSTING=hostingplesk.ddns.net
+# DEFAULT_IP=54.159.9.199
+# NETMASK=255.255.255.0
+# IFACE=eth0
+# IP_TYPE=shared
+# HOSTING=hostingplesk.ddns.net
 NAME=Mihai
 PASSWD=@W62dv8ui
 PHONE=642083481
