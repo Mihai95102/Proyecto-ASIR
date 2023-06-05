@@ -30,7 +30,7 @@ cd /tmp
 chmod +x ./plesk-installer
 
 # Ejecutamos el instalador de Plesk
-sudo PLESK_DB_DSN_PREFIX=mysql://plesk1:hola@44.214.48.106/host1_psa ./plesk-installer --select-product-id plesk --select-release-latest --installation-type Recommended
+sudo PLESK_DB_DSN_PREFIX=mysql://plesk1:hola@44.214.48.106/host2_ ./plesk-installer --select-product-id plesk --select-release-latest --installation-type Recommended
 
 # Configuración postinstalación de Plesk
 plesk bin init_conf --init \
@@ -47,8 +47,7 @@ plesk bin init_conf --init \
     -trial_license true
 
 # Cambiamos el idioma de la interfaz de Plesk
-mysql -u root -e "use host1_psapsa; update misc set val='es-ES' where param='def_locale'; update misc set val='es-ES' where param='admin_locale';"
-mysql -u root -e "use host2_psa; update misc set val='es-ES' where param='def_locale'; update misc set val='es-ES' where param='admin_locale';"
+mysql -u root -e "use psa; update misc set val='es-ES' where param='def_locale'; update misc set val='es-ES' where param='admin_locale';"
 
 # # Ejecutamos el script de creación de dominio, usuario y rol
 # sudo ./create_plesk.sh
