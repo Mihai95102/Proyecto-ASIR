@@ -29,3 +29,28 @@ done
 
 # Creamos directorio para montar NFS
 mkdir -p /nfs/plesk_files
+
+# Cambiamos el contenido del archivo /etc/hosts
+cp conf/hosts /etc/hosts
+
+# Cambiamos el archivo de configuración de corosync
+cp conf/corosync.conf /etc/corosync/corosync.conf
+
+# Instalamos JQ
+apt-get install jq -y
+
+# Nos movemos de directorio
+cd /usr/lib/ocf/resource.d/heartbeat/
+
+# Agentes de recursos
+wget https://github.com/ClusterLabs/resource-agents/blob/main/heartbeat/awseip
+wget https://raw.githubusercontent.com/ClusterLabs/resource-agents/main/heartbeat/Filesystem
+wget https://www.plesk.com/filelink.php?d=BindFilesystem
+wget https://www.plesk.com/filelink.php?d=PleskHA
+
+# Cambiamos el nombre de los recursos
+mv 'filelink.php?d=BindFilesystem' /usr/lib/ocf/resource.d/heartbeat/BindFilesystem
+mv 'filelink.php?d=PleskHA' /usr/lib/ocf/resource.d/heartbeat/PleskHA
+
+# Le damos permisos de ejecución a los recursos
+chmod 755 awseip Filesystem BindFilesystem PleskHA
