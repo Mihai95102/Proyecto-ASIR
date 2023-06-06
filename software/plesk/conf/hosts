@@ -10,5 +10,4 @@ ff02::3	ip6-allhosts
 
 172.31.67.217	angry-bell.52-0-15-246.plesk.page angry-bell	
 
-52.0.15.246	ha-node1.local
-3.213.11.32	ha-node2.local
+52.0.15.246	angry-bell

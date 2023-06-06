@@ -71,5 +71,3 @@ plesk bin event_handler --create -command "/bin/cp /etc/passwd /nfs/plesk_files/
 plesk bin event_handler --create -command "/bin/cp /etc/passwd /nfs/plesk_files/etc/passwd" -priority 50 -user root -event site_subdomain_update
 plesk bin event_handler --create -command "/bin/cp /etc/passwd /nfs/plesk_files/etc/passwd" -priority 50 -user root -event site_subdomain_delete
 plesk bin event_handler --create -command "/bin/cp /etc/passwd /nfs/plesk_files/etc/passwd" -priority 50 -user root -event site_subdomain_move
-
-# 
