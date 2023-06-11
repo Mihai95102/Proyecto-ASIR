@@ -11,13 +11,11 @@ apt-get update
 # Instalamos el NFS Server
 apt-get install nfs-kernel-server -y
 
-# Eliminamos los directorios por si existen
-rm -rf /var/nfs/plesk-ha/vhosts
-rm -rf /var/nfs/plesk-ha/plesk_files
+# Activamos la opción manage-gids en nfs.conf
+sed -i "s/manage-gids=n/manage-gids=y/" /etc/nfs.conf
 
-# Creamos un directorio donde Plesk almacenará los archivos de los sitios web
-mkdir -p /var/nfs/plesk-ha/vhosts
-mkdir -p /var/nfs/plesk-ha/plesk_files
+# Activamos la opción manage-gids en nfs-kernel-server
+sed -i "s/RPCMOUNTDOPTS="--manage-gids"/RPCMOUNTDOPTS="--manage-gids"/" /etc/default/nfs-kernel-server
 
 # Actualizamos el archivo /etc/exports
 cp conf/exports /etc/exports
