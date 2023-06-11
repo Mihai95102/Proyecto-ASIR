@@ -9,4 +9,4 @@
 # /srv/nfs4/homes  gss/krb5i(rw,sync,no_subtree_check)
 #
 
-/var/nfs/plesk-1/vhosts 52.0.15.246(rw,sync,no_root_squash,no_subtree_check)
+/var/nfs/plesk/vhosts 3.95.118.210(rw,sync,no_root_squash,no_subtree_check)

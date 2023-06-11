@@ -1,0 +1,4 @@
+LABEL=cloudimg-rootfs	/	 ext4	discard,errors=remount-ro	0 1
+LABEL=UEFI	/boot/efi	vfat	umask=0077	0 1
+
+44.208.3.123:/var/nfs/plesk/vhosts  /var/www/vhosts nfs hard,timeo=600,retrans=2,_netdev 0 0
