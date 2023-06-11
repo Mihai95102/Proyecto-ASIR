@@ -1,9 +1,9 @@
 # Instalación Plesk
-# DEFAULT_IP=54.159.9.199
-# NETMASK=255.255.255.0
-# IFACE=eth0
-# IP_TYPE=shared
-# HOSTING=hostingplesk.ddns.net
+DEFAULT_IP=3.95.118.210
+NETMASK=255.255.255.0
+IFACE=eth0
+IP_TYPE=shared
+HOSTING=hostingplesk.ddns.net
 NAME=Mihai
 PASSWD=@W62dv8ui
 PHONE=642083481
@@ -14,10 +14,12 @@ COUNTRY=ES
 STATE=ALM
 
 # Creación Plesk
-CREATE=proyectoplesk.ddns.net
-HOST_IP=172.31.67.217
+CREATE=skynet95102.ddns.net
+HOST_IP=3.95.118.210
 ROL=gestion
+ROL2=gestion2
 OWNER=admin
+MAIL=prueba@plesklocal.ddns.net
 
 # CertBot
 CORREO=mbut182@g.educaand.es
@@ -25,6 +27,4 @@ DOMINIO=hostingplesk.ddns.net
 
 # Base de Datos
 USUARIOPLESK=plesk1
-USUARIOAPSC=apsc1
-USUARIOMAIL=mail1
-USUARIO2=plesk2
+BD_PASS=hola
