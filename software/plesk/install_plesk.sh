@@ -6,13 +6,7 @@ set -x
 source ../vars/variables.sh
 
 # Actualizamos los paquetes
-apt-get update -y
-
-# Instalamos Apache
-apt-get install apache2 -y
-
-# Ejecutamos el script de Certbot para solicitar el certificado
-sudo ./certbot_plesk.sh
+apt-get update
 
 # Instalamos el comando WGET
 apt-get install wget
@@ -39,7 +33,6 @@ plesk bin init_conf --init \
     -netmask $NETMASK \
     -iface $IFACE \
     -ip_type $IP_TYPE \
-    -hostname $HOSTING \
     -name $NAME \
     -passwd $PASSWD \
     -phone $PHONE \
@@ -54,6 +47,3 @@ plesk bin init_conf --init \
 
 # Cambiamos el idioma de la interfaz de Plesk
 mysql -u root -e "use psa; update misc set val='es-ES' where param='def_locale'; update misc set val='es-ES' where param='admin_locale';"
-
-# # Ejecutamos el script de creación de dominio, usuario y rol
-# sudo ./create_plesk.sh
