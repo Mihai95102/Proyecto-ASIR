@@ -8,14 +8,14 @@ source ../vars/variables.sh
 # Actualizamos los paquetes
 sudo apt-get update
 
-# Creamos un dominio
-plesk bin domain --create $CREATE -hosting true -ip $HOST_IP -login $ROL2 -passwd $PASSWD
+# # Creamos un dominio
+# plesk bin domain --create $CREATE -hosting true -ip $HOST_IP -login $ROL2 -passwd $PASSWD
 
 # # Creamos una cuenta de email
 # plesk bin mail --create $MAIL -mailbox true -passwd $PASSWD -status enabled -delivery true 
 
 # Creamos un rol para los usuarios
-plesk bin role --create $ROL2 \
+plesk bin role --create $ROL \
     -owner $OWNER \
     -webSitesAndDomainsManagement true \
     -spamfilterManagement true \
@@ -28,10 +28,9 @@ plesk bin role --create $ROL2 \
     -mailManagement true
 
 # Creamos un nuevo usuario para que el cliente gestione su dominio
-plesk bin user --create $ROL2 \
-    -cname $ROL2 \
-    -role $ROL2 \
+plesk bin user --create $ROL \
+    -cname $ROL \
+    -role $ROL \
     -passwd $PASSWD \
     -owner $OWNER \
-    -external-email $CORREO \
-    -subscription-name $CREATE
+    -external-email $EMAIL
