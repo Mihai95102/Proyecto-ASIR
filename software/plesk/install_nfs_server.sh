@@ -18,7 +18,8 @@ sed -i "s/manage-gids=n/manage-gids=y/" /etc/nfs.conf
 sed -i "s/RPCMOUNTDOPTS="--manage-gids"/RPCMOUNTDOPTS="--manage-gids"/" /etc/default/nfs-kernel-server
 
 # Creamos la ruta NFS
-mkdir /var/nfs/plesk/vhosts
+mkdir /var/nfs/plesk/vhosts-local
+mkdir /var/nfs/plesk/vhosts-remote
 
 # Actualizamos el archivo /etc/exports
 cp conf/exports /etc/exports
