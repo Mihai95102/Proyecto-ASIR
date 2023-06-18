@@ -1,0 +1,344 @@
+Usage: installer [OPTIONS]
+
+Run the Plesk Installer without options to start it as an interactive wizard.
+
+ Product and components installation options:
+    --installation-type <type name>
+                         Installs a predefined set of components.
+                         This option can be used only for installing
+                         a product. It is not available if a product version
+                         is already installed on the server.
+
+                         Examples:
+                         1) install recommended set of components of the
+                         latest generally available Plesk version:
+                           --select-product-id plesk \
+                           --select-release-latest --installation-type Recommended
+                         2) install all components of the latest stable
+                         Plesk version:
+                           --select-product-id plesk --select-release-latest \
+                           --tier stable --installation-type Full
+
+    --install-component <component id>
+                         Install the product component with specified
+                         identifier. This option may be used for initial
+                         product installation by specifying all required
+                         components to install as well as for adding specified
+                         components to an already existing installation.
+
+                         Examples:
+                         1) install Plesk 12.5.30 (example is shortened):
+                           --select-product-id plesk \
+                           --select-release-id PLESK_12_5_30 \
+                           --install-component panel \
+                           --install-component phpgroup \
+                           --install-component web-hosting ...
+                         2) add Tomcat Java support to installed Plesk:
+                           --select-product-id plesk --select-release-current \
+                           --install-component java
+
+    --set-option <setting_name>=<setting_value>
+                         Change a setting for a product component.
+                         To view a list of all available settings, use
+                         the option --show-options.
+
+ Product and components removal options:
+    --remove-component <component id>
+                         Removes the product component with the specified
+                         identifier.
+
+                         Examples:
+                         1) remove Horde Webmail from installed Plesk:
+                           --select-product-id plesk --select-release-current \
+                           --remove-component horde
+                         2) replace QMail with Postfix in installed Plesk:
+                           --select-product-id plesk --select-release-current \
+                           --remove-component qmail --install-component postfix
+
+    --remove-everything  Removes all components of the selected product version,
+                         effectively uninstalling the product.
+
+                         Example (uninstall Plesk):
+                           --select-product-id plesk --remove-everything
+
+ Options for updating and upgrading a product:
+    --upgrade-installed-components
+                         Update or upgrade all installed components of the
+                         selected product version.
+
+                         Examples:
+                         1) install latest updates for installed Plesk version:
+                           --select-product-id plesk --select-release-current \
+                           --upgrade-installed-components
+                         2) upgrade to Plesk 12.5.30 from a previous version:
+                           --select-product-id plesk \
+                           --select-release-id PLESK_12_5_30 \
+                           --upgrade-installed-components
+
+    --ignore-key-errors  Allow product upgrade even if license key is not
+                         upgradable.
+
+ Options for selecting a product and its version:
+    --select-product-id <product id>
+                         Select the product by specifying its identifier.
+                         To see the list of all supported product identifiers,
+                         use the --show-all-releases option.
+                         This option is order-sensitive. If present, it must
+                         be specified before any of the corresponding
+                         --select-release-id, --select-release-latest or
+                         --select-release-current options.
+
+    --select-release-id <release id>
+                         Use this option to specify the product version that you
+                         want to install or whose properties you want to view.
+
+    --select-release-latest
+                         Select the latest product version available for
+                         your operating system with the selected release tiers.
+
+    --select-release-current
+                         Select the same product version as the one installed
+                         on your server.
+
+    --tier <tiers>       Restrict available product versions to the latest ones
+                         that belong to the selected release tiers. You can
+                         specify multiple tiers by separating them with a comma.
+                         For example: --tier stable,release,testing
+
+    --all-versions       Do not filter available product versions by tiers they
+                         belong to.
+                         Starting from Plesk Installer 3.11, every product
+                         version is associated with one or several release tiers.
+                         By default, only the latest versions from the
+                         "stable,release,current" tiers as well as the
+                         currently installed product version are shown.
+                         You can use this option to work with the Installer
+                         disregarding the release tiers scheme.
+
+ Options for listing entities available at installation source:
+    --show-releases      Specify this option to retrieve a list of available
+                         product versions for the operating system where the
+                         Plesk Installer is executed. You will be given a list
+                         of release identifiers, descriptions, and their tiers.
+                         A product identifier from the first column may be used
+                         as an argument to the --select-product-id option.
+                         A release identifier from the second column may be used
+                         as an argument to the --select-release-id option.
+                         Release tiers may be used as an argument to the
+                         --tier option.
+
+    --show-all-releases  This option shows all product versions available from
+                         the installation source. Output format is the same
+                         as for the --show-releases option.
+
+    --show-os-list       Use this option to find out on which operating systems
+                         the product version you selected can run.
+
+    --show-installation-types
+                         Show the names of predefined sets of components
+                         for the selected product version.
+
+    --show-components    Use this option to obtain the information on the
+                         components available for the selected product version.
+                         Component names, installation status, and descriptions
+                         will be displayed.
+                         You need to specify component names when selecting
+                         components with the --install-component or
+                         --remove-component options.
+
+    --show-upgradable-components
+                         Use this option to obtain the information on the
+                         installed components which have available updates.
+                         Component names, installation status, and descriptions
+                         will be displayed.
+
+    --show-options       This option can be used only with the --show-components
+                         and --show-upgradable-components options. Use it if you
+                         want to view available installation settings.
+
+    --show-packages      Do not actually perform components installation,
+                         removal, update or upgrade. Instead show packages that
+                         will be installed, updated or removed, marked with
+                         [I], [U], and [R] respectively.
+
+ Feedback control options:
+    --enable-feedback    Start automatic submission of reports about issues 
+                         occurred during Plesk installation and upgrade,
+                         and other issues with Plesk.
+                         Important: This option applies to all further
+                         operations with Plesk.
+
+    --disable-feedback   Stop automatic submission of reports about Plesk
+                         installation, upgrade, and other problems to Plesk.
+                         Important: This option applies to all further
+                         operations with Plesk.
+
+ Download options:
+    --source <URL or absolute path>
+                         Installation source: a mirror URL or an absolute path
+                         to a directory containing top-level products.inf3 file.
+
+                         Sample values:
+                           http://autoinstall.plesk.com/
+                           /root/parallels/
+                           http://autoinstall-win.plesk.com/
+                           C:\ParallelsInstaller\parallels
+
+    --target <dir>       Directory to store temporary downloaded files.
+
+                         Sample value:
+                           /root/parallels/
+
+    --download-retry-count <number>
+                         Maximum number of retries for download operations.
+
+ Proxy server options:
+    --proxy-host <host>  HTTP(S) proxy server domain name or IP address.
+
+    --proxy-port <port>  Proxy server port number.
+
+    --proxy-user <user>  Set username for authorization at the proxy server.
+
+    --proxy-password <password>
+                         Set password for authorization at the proxy server.
+
+ Options to override detected operating system environment:
+    --override-os-name <arg>
+                         Override the detected operating system name.
+
+    --override-os-vendor <arg>
+                         Override the detected operating system vendor.
+
+    --override-os-version <arg>
+                         Override the detected operating system version.
+
+    --override-os-arch <arg>
+                         Override the detected operating system architecture.
+
+    --override-environment <arg>
+                         Override the detected environment
+                         (possible values: 'dedicated', 'vz').
+
+ Options to suppress warnings:
+    --skip-components-check
+                         Do not run any environment state validation scripts,
+                         including product pre-upgrade check-up that checks
+                         for possible issues that may arise after upgrading.
+                         This option is intended to be used in unattended
+                         Plesk Installer mode and is not recommended for
+                         use in other modes.
+
+ Options for interaction with other software and automating updates:
+    --enable-xml-output  Specify this option to have all output of
+                         Plesk Installer in XML format. Note that
+                         this option disallows Plesk Installer to
+                         report errors by exit code. Exit code is always zero
+                         and all errors are reported inside XML output.
+
+    --query-status       Use this option to find out if Plesk Installer
+                         is active. This will return either an exit
+                         code (0 - Plesk Installer is idle,
+                         1 - Plesk Installer is running and busy),
+                         or XML-formatted output.
+
+    --check-updates      Specify this option to check the installation source
+                         for updates applicable to your product version.
+                         A list of releases that you can update or upgrade to
+                         will be shown.
+
+                         Example:
+                           --select-product-id plesk --check-updates
+
+    --no-daemon          Perform installation process in the foreground.
+
+ Web interface options:
+    --web-interface      Opens the web-based installation wizard in
+                         a web browser.
+
+    --ssl-cert <file.pem>
+                         Specifies the path to the SSL certificate file that
+                         should be used for securing connections.
+
+    --without-ssl        Specifies that connections to the web-based
+                         installation wizard will not be secured.
+
+ Interactive console user interface options:
+    --no-clear           Do not clear the screen when moving between
+                         wizard's pages.
+
+ Obsolete options:
+    --disable-plesk-sys-updates
+                         Do not use operating system updates shipped
+                         with Plesk and other products.
+
+    --install-everything
+                         Install all components of the selected product version.
+                         Consider using '--installation-type Full' instead if
+                         the product provides 'Full' installation type.
+
+ Deprecated and ignored options:
+    --source-type        This option is deprecated and will be ignored.
+                         Source type is automatically detected from the
+                         --source option value.
+
+    --no-space-check     This option is deprecated and will be ignored.
+                         To skip disk space check in non-interactive mode
+                         consider using --skip-components-check option instead.
+
+    --add-source         This option is deprecated and will be ignored.
+                         Additional repositories should be set up using system
+                         package manager (apt or yum).
+
+    --show-additional-source-types
+                         This option is deprecated and will be ignored.
+
+    --show-additional-sources
+                         This option is deprecated and will be ignored.
+
+    --allow-kernel-install
+                         This option is deprecated and will be ignored.
+                         Modern Plesk versions do not require kernel update.
+
+    --install-system-only
+                         This option is deprecated and will be ignored.
+                         Product packages will always be installed for modern
+                         Plesk versions.
+
+    --disable-major-updates
+                         This option is deprecated and will be ignored.
+                         Patch-only updates are not supported anymore as they
+                         might result in product instability and other issues, 
+                         and might present security risks due to prohibiting 
+                         the installation of important updates.
+
+    --reinstall-patch
+                         This option is deprecated and will be ignored.
+                         Patches are not used since Obsidian.
+
+    --repatch
+                         This option is deprecated and will be ignored.
+                         Patches are not used since Obsidian.
+
+    --mirror-os
+                         This option is deprecated and will be ignored.
+
+ Logging control options:
+    --notify-email <email>
+                         Email address to send reports to after Plesk Installer
+                         completes a task.
+
+    --truncate-log       Clear the log file on each Plesk Installer startup.
+
+    --separate-log       Use a new log file on each Plesk Installer startup.
+
+    --debug              Maximize log file verbosity.
+
+ Options to get information about Plesk Installer:
+    --version            Show the Plesk Installer's version.
+
+    --usage,
+    --help               Show the main help page.
+
+    --help-options       Show this help page.
+
+See 'installer help' for information on a command-based interface.
