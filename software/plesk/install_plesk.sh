@@ -29,10 +29,6 @@ sudo ./plesk-installer --select-product-id plesk --select-release-latest --insta
 
 # Configuración postinstalación de Plesk
 plesk bin init_conf --init \
-    -default_ip $DEFAULT_IP \
-    -netmask $NETMASK \
-    -iface $IFACE \
-    -ip_type $IP_TYPE \
     -name $NAME \
     -passwd $PASSWD \
     -phone $PHONE \
