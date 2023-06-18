@@ -2,6 +2,9 @@
 
 set -x
 
+# Variables
+source ../vars/variables.sh
+
 # Actualizamos los paquetes del sistema
 apt-get update
 
