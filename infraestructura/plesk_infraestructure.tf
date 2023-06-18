@@ -100,15 +100,29 @@ resource "aws_security_group" "sg_plesk" {
   }
 
   ingress {
-    from_port   = 3306
-    to_port     = 3306
+    from_port   = 53
+    to_port     = 53
+    protocol    = "udp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  ingress {
+    from_port   = 7080
+    to_port     = 7080
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
 
   ingress {
-    from_port   = 3306
-    to_port     = 3306
+    from_port   = 7081
+    to_port     = 7081
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  ingress {
+    from_port   = 8847
+    to_port     = 8847
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
@@ -242,13 +256,13 @@ resource "aws_instance" "Plesk2" {
 # Creamos una instancia EC2 para BD_Plesk
 resource "aws_instance" "BD_Plesk" {
   ami             = "ami-00874d747dde814fa"
-  instance_type   = "t2.small"
+  instance_type   = "t2.medium"
   key_name        = "vockey"
   security_groups = [aws_security_group.sg_bd.name]
 
   root_block_device {
     volume_type           = "gp2"
-    volume_size           = 15
+    volume_size           = 50
     delete_on_termination = true
   }
 
