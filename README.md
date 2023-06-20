@@ -310,7 +310,7 @@ La creación de dominios y mantenimiento de dominios en Plesk se hace de una for
 	él dónde se guardarán todos los dominios y subdominios del cliente,
 
     <img src="images/105.png" width="380"/>
-.
+
     <img src="images/104.png" width="420"/>
 
 	A la hora de crear subdominios el proceso es similar, sólo que tendremos que
