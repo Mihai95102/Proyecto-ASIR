@@ -287,7 +287,7 @@ __Desventajas:__
 
 La creación de dominios y mantenimiento de dominios en Plesk se hace de una forma muy cómoda e intuitiva. Tenemos 2 opciones a la hora de crear un dominio:
 
-- Desde la interfaz gráfica: esta forma es la más fácil y rápida para crear un dominio. Se puede crear un dominio en blanco donde subimos nosotros mismos nuestros archivos o podemos crear un sitio que tenga instalado WordPress
+- __Desde la interfaz gráfica:__ esta forma es la más fácil y rápida para crear un dominio. Se puede crear un dominio en blanco donde subimos nosotros mismos nuestros archivos o podemos crear un sitio que tenga instalado WordPress
 
     <img src="images/100.png" width="380"/>
 
@@ -322,8 +322,53 @@ La creación de dominios y mantenimiento de dominios en Plesk se hace de una for
 
     <img src="images/107.png" width="420"/>
 
-- Desde CLI: Plesk nos ofrece la opción de crear dominios desde el terminal, esto es muy conveniente en casos cuando se tienen que crear muchos dominios de forma rápida, para ello se puede crear un script de bash donde se puede automatizar la creación de los dominios.
+- __Desde CLI:__ Plesk nos ofrece la opción de crear dominios desde el terminal, esto es muy conveniente en casos cuando se tienen que crear muchos dominios de forma rápida, para ello se puede crear un script de bash donde se puede automatizar la creación de los dominios.
 
     <img src="images/109.png" width="750"/>
 
     <img src="images/108.png" width="750"/>
+
+### Administración de dominios
+
+Las opciones que ofrece Plesk a la hora de administrar los dominios son las siguientes:
+
+- __Bases de datos:__ en cada dominio se pueden crear y administrar las bases de datos que crearemos para la instalación de aplicaciones en los dominios y subdominios, por ejemplo cuando instalemos en el dominio un sitio WordPress este automáticamente creará una base de datos donde guardará todas las tablas de WordPress.
+
+
+- __Backup y restauración:__ podemos administrar y crear copias de seguridad para garantizar la seguridad de los dominios y subdominios para los clientes. En caso de que ocurra algún problema con el dominio, por error de configuración o otra cosa, este se puede restaurar a una versión anterior a los cambios gracias a la copia de seguridad. Por lo que es importante programar las copias de seguridad para que se hagan por lo menos semanalmente y también tenemos que tener en cuenta el espacio que ocupan estas copias, así que sería recomendable guardarlas en un dispositivo externo o crear un servidor específicamente para guardar las copias de seguridad.
+
+
+- __Certificados SSL:__ para mejorar la seguridad de los dominios debemos protegerlos con Certificados SSL, ya sean gratuitos o de pago, aunque la mejor opción es siempre la gratuita. 
+
+    En mi caso al no tener un dominio comprado propio, he optado por registrar un dominio de host en NoIP ya que ofrece el registro de un nombre de host de forma gratuita al crear una cuenta.
+    A la hora de no tener un dominio propio esto limita bastante a la hora de emitir certificados SSL para el dominio y los subdominios de este.
+
+    En definitiva, al menos con el dominio gratuito de ofrece NoIP se puede proteger el dominio registrado aunque no se puedan proteger ni el webmail ni los subdominios de este.
+
+
+- __ImunifyAV:__ la herramienta de ImunifyAV está presente en todos los dominios y subdominios de Plesk, esta aplicación nos garantiza mantener nuestro dominios libres de Malware.
+
+
+- __Configuración de PHP:__ dentro de las opciones del dominio que ofrece Ples también podemos configurar las opciones de PHP de forma gráfica, por ejemplo la versión de PHP que queremos usar dependiendo de nuestras necesidades.
+
+
+	O podemos administrar las opciones de seguridad de PHP y cambiarlas según
+	las necesidades de cada dominio.
+
+
+- __Registros:__ en este apartado se recopilan todos los datos relacionados con el dominio, desde los errores hasta quien ha accedido al dominio.
+
+
+- __Monitoring:__ con esta opción podemos usar la aplicación que ofrece Plesk para el monitoreo externo de los dominios del servidor de Plesk, para usar la aplicación tenemos que registrarnos en la aplicación llamada 360 Monitoring.
+
+	Una vez nos hayamos registrado en 360 Monitoring podemos conectar nuestra
+	cuenta con los servidores de Plesk y activar el monitoreo para los dominios.
+
+	Lo bueno 360 Monitoring es que podemos vincular varios servidores de hosting 
+	para monitorearlos, junto a los dominios y subdominios de cada uno.
+
+- __Instalar aplicaciones:__ Plesk de base nos ofrece una serie de aplicaciones preconfiguradas para instalar en los dominios, como WordPress o Prestashop
+
+    Por ejemplo, para instalar WordPress en un dominio lo primero que hay que hacer es crear una base de datos para que use y cuando ya la tengamos instalamos la aplicación indicando la base de datos que usará.
+
+    También se pueden instalar otras aplicaciones externas cargando el contenido de la aplicación en el administrador de archivos del dominio.
