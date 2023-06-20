@@ -309,21 +309,21 @@ La creación de dominios y mantenimiento de dominios en Plesk se hace de una for
     Una vez tengamos creado el cliente podremos crear una suscripción vinculada a 
 	él dónde se guardarán todos los dominios y subdominios del cliente,
 
-    <img src="images/104.png" width="380"/>
+    <img src="images/105.png" width="380"/>
 
-    <img src="images/105.png" width="330"/>
+    <img src="images/104.png" width="330"/>
 
 	A la hora de crear subdominios el proceso es similar, sólo que tendremos que
 	indicar el dominio donde queremos que se cree el subdominio.
 
-    <img src="images/106.png" width="380"/>
+    <img src="images/106.png" width="420"/>
 
     Aquí podemos ver todos los dominios y subdominios del cliente.
 
-    <img src="images/107.png" width="380"/>
+    <img src="images/107.png" width="420"/>
 
 - Desde CLI: Plesk nos ofrece la opción de crear dominios desde el terminal, esto es muy conveniente en casos cuando se tienen que crear muchos dominios de forma rápida, para ello se puede crear un script de bash donde se puede automatizar la creación de los dominios.
 
-    <img src="images/108.png" width="500"/>
+    <img src="images/109.png" width="750"/>
 
-    <img src="images/109.png" width="500"/>
+    <img src="images/108.png" width="750"/>
