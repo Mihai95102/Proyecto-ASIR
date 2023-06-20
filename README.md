@@ -153,6 +153,6 @@ Primero nos mostrará los cambios que se van a aplicar y al final tendremos que 
 
 Al acabar la ejecución del script, podemos ir a nuestras instancias de AWS y veremos que se han creado correctamente todas las instancias.
 
-<img src="images/32.png" width="380"/>
+<img src="images/32.png" width="500"/>
 
 ## 3. Instalación de Plesk
