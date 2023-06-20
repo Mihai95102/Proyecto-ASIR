@@ -334,30 +334,49 @@ Las opciones que ofrece Plesk a la hora de administrar los dominios son las sigu
 
 - __Bases de datos:__ en cada dominio se pueden crear y administrar las bases de datos que crearemos para la instalación de aplicaciones en los dominios y subdominios, por ejemplo cuando instalemos en el dominio un sitio WordPress este automáticamente creará una base de datos donde guardará todas las tablas de WordPress.
 
+    <img src="images/111.png" width="350"/>
+
+    <img src="images/110.png" width="420"/>
+
 
 - __Backup y restauración:__ podemos administrar y crear copias de seguridad para garantizar la seguridad de los dominios y subdominios para los clientes. En caso de que ocurra algún problema con el dominio, por error de configuración o otra cosa, este se puede restaurar a una versión anterior a los cambios gracias a la copia de seguridad. Por lo que es importante programar las copias de seguridad para que se hagan por lo menos semanalmente y también tenemos que tener en cuenta el espacio que ocupan estas copias, así que sería recomendable guardarlas en un dispositivo externo o crear un servidor específicamente para guardar las copias de seguridad.
 
+    <img src="images/112.png" width="420"/>
 
 - __Certificados SSL:__ para mejorar la seguridad de los dominios debemos protegerlos con Certificados SSL, ya sean gratuitos o de pago, aunque la mejor opción es siempre la gratuita. 
 
+    <img src="images/114.png" width="350"/>
+
     En mi caso al no tener un dominio comprado propio, he optado por registrar un dominio de host en NoIP ya que ofrece el registro de un nombre de host de forma gratuita al crear una cuenta.
+
+    <img src="images/115.png" width="420"/>
+
     A la hora de no tener un dominio propio esto limita bastante a la hora de emitir certificados SSL para el dominio y los subdominios de este.
 
     En definitiva, al menos con el dominio gratuito de ofrece NoIP se puede proteger el dominio registrado aunque no se puedan proteger ni el webmail ni los subdominios de este.
 
+    <img src="images/117.png" width="350"/>
+    <img src="images/118.png" width="350"/>
+    <img src="images/119.png" width="350"/>
+
 
 - __ImunifyAV:__ la herramienta de ImunifyAV está presente en todos los dominios y subdominios de Plesk, esta aplicación nos garantiza mantener nuestro dominios libres de Malware.
 
+    <img src="images/121.png" width="350"/>
+    <img src="images/122.png" width="350"/>
 
 - __Configuración de PHP:__ dentro de las opciones del dominio que ofrece Ples también podemos configurar las opciones de PHP de forma gráfica, por ejemplo la versión de PHP que queremos usar dependiendo de nuestras necesidades.
 
+    <img src="images/123.png" width="350"/>
 
 	O podemos administrar las opciones de seguridad de PHP y cambiarlas según
 	las necesidades de cada dominio.
 
+    <img src="images/124.png" width="350"/>
 
 - __Registros:__ en este apartado se recopilan todos los datos relacionados con el dominio, desde los errores hasta quien ha accedido al dominio.
 
+    <img src="images/125.png" width="350"/>
 
 - __Monitoring:__ con esta opción podemos usar la aplicación que ofrece Plesk para el monitoreo externo de los dominios del servidor de Plesk, para usar la aplicación tenemos que registrarnos en la aplicación llamada 360 Monitoring.
 
@@ -367,8 +386,14 @@ Las opciones que ofrece Plesk a la hora de administrar los dominios son las sigu
 	Lo bueno 360 Monitoring es que podemos vincular varios servidores de hosting 
 	para monitorearlos, junto a los dominios y subdominios de cada uno.
 
+    <img src="images/134.png" width="420"/>
+    <img src="images/135.png" width="420"/>
+
 - __Instalar aplicaciones:__ Plesk de base nos ofrece una serie de aplicaciones preconfiguradas para instalar en los dominios, como WordPress o Prestashop
 
-    Por ejemplo, para instalar WordPress en un dominio lo primero que hay que hacer es crear una base de datos para que use y cuando ya la tengamos instalamos la aplicación indicando la base de datos que usará.
+    <img src="images/136.png" width="420"/>
+    <img src="images/137.png" width="420"/>
 
     También se pueden instalar otras aplicaciones externas cargando el contenido de la aplicación en el administrador de archivos del dominio.
+
+    <img src="images/144.png" width="420"/>
