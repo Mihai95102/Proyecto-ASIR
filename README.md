@@ -420,7 +420,7 @@ Lo primero que necesitamos es saber los datos de la cuenta de correo a importar,
 
 Después de introducir los datos del host de origen y sean correctos, la cuenta se sincronizará con el servidor de origen.
 
-<img src="images/170.png" width="350"/>
+<img src="images/170.png" width="500"/>
 
 ## 6. Gestión de usuarios y roles
 
@@ -438,7 +438,7 @@ Hay que tener en cuenta que los clientes no tienen que tener demasiados permisos
 Ahora crearemos un nuevo usuario y le asignaremos el rol que acabamos de crear.
 
 <img src="images/174.png" width="350"/>
-<img src="images/175.png" width="750"/>
+<img src="images/175.png" width="500"/>
 
 Una vez creado el usuario vamos a tratar de acceder al servidor con el usuario que hemos creado y ver que se han aplicado los permisos del
 rol de usuario.
