@@ -455,7 +455,7 @@ Plesk ofrece una gran cantidad de extensiones de seguridad, DNS, copias de segur
 
 Algunas de las extensiones más interesantes de Plesk son:
 
-- Acronis Backup: es una herramienta de copias de seguridad de pago, aunque ofrece una prueba gratuita.
+- __Acronis Backup:__ es una herramienta de copias de seguridad de pago, aunque ofrece una prueba gratuita.
 
     <img src="images/181.png" width="500"/>
 
@@ -466,11 +466,11 @@ Algunas de las extensiones más interesantes de Plesk son:
     <img src="images/188.png" width="750"/>
     <img src="images/189.png" width="500"/>
 
-- Google PageSpeed Insights: extensión de Google que nos da una puntuación en base a la seguridad de nuestra página y a la rapidez de esta.
+- __Google PageSpeed Insights:__ extensión de Google que nos da una puntuación en base a la seguridad de nuestra página y a la rapidez de esta.
 
     <img src="images/190.png" width="650"/>
 
-- SEO Toolkit: herramienta de posicionamiento web para que las páginas que alojamos en nuestros paneles salgan las primeras en el buscador cuando se busque algo relacionado.
+- __SEO Toolkit:__ herramienta de posicionamiento web para que las páginas que alojamos en nuestros paneles salgan las primeras en el buscador cuando se busque algo relacionado.
 
     <img src="images/194.png" width="500"/>
 
