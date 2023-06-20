@@ -413,14 +413,14 @@ Para crear la cuenta es muy fácil, simplemente le asignamos un nombre a la cuen
 
 Lo primero que necesitamos es saber los datos de la cuenta de correo a importar, como la dirección de correo, la contraseña, el servidor IMAP y SMTP, el puerto que usa y el cifrado que usa. Para saber estos datos tendremos que ir al servidor donde se encuentra la cuenta de correo a importar y ver los datos de la configuración manual de la cuenta.
 
-<img src="images/158.png" width="500"/>
-<img src="images/168.png" width="500"/>
-<img src="images/169.png" width="750"/>
+<img src="images/158.png" width="350"/>
+<img src="images/168.png" width="350"/>
+<img src="images/169.png" width="350"/>
 
 
 Después de introducir los datos del host de origen y sean correctos, la cuenta se sincronizará con el servidor de origen.
 
-<img src="images/170.png" width="750"/>
+<img src="images/170.png" width="350"/>
 
 ## 6. Gestión de usuarios y roles
 
@@ -428,26 +428,26 @@ Plesk ofrece la opción de crear distintos usuarios dentro del servidor, esto se
 
 Antes de crear cuentas de usuarios tenemos que crear nuevos roles de usuario o usar los que dan ya por defecto el propio Plesk.
 
-<img src="images/171.png" width="750"/>
+<img src="images/171.png" width="350"/>
 
 Hay que tener en cuenta que los clientes no tienen que tener demasiados permisos a la hora de poder gestionar sus dominios. El rol que crearemos para los clientes será el siguiente.
 
-<img src="images/172.png" width="750"/>
-<img src="images/173.png" width="750"/>
+<img src="images/172.png" width="350"/>
+<img src="images/173.png" width="350"/>
 
 Ahora crearemos un nuevo usuario y le asignaremos el rol que acabamos de crear.
 
-<img src="images/174.png" width="750"/>
+<img src="images/174.png" width="350"/>
 <img src="images/175.png" width="750"/>
 
 Una vez creado el usuario vamos a tratar de acceder al servidor con el usuario que hemos creado y ver que se han aplicado los permisos del
 rol de usuario.
 
-<img src="images/176.png" width="750"/>
+<img src="images/176.png" width="350"/>
 
 Como se puede ver dicho usuario tiene un acceso limitado a la hora de gestionar los dominios.
 
-<img src="images/177.png" width="750"/>
+<img src="images/177.png" width="500"/>
 
 ## 7. Extensiones de Plesk
 
