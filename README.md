@@ -479,3 +479,39 @@ Algunas de las extensiones más interesantes de Plesk son:
 	buscadores
 
     <img src="images/195.png" width="720"/>
+
+## 8. Problemas encontrados
+
+Durante la realización del proyecto he investigado varias formas de despliegue de Plesk aparte de la instalación en local o en remoto. Pero la cosa es que Plesk no ofrece demasiada variedad a la hora de desplegar Plesk en servidores aparte de la Local y la Remota.
+Existe documentación oficial de Plesk donde ofrecen una solución de alta disponibilidad para instalar Plesk o una opción de despliegue con un sistema de archivos en red, es decir, un servidor NFS. Pero durante el proceso de prueba de estas soluciones que ofrece de forma oficial Plesk me he encontrado con diversos problemas que aún no ha resuelto el soporte de Plesk.
+Estos problemas según me he informado en varios foros oficiales de Plesk, estos problemas son debidos a que la documentación oficial emitida por Plesk aún no está completamente desarrollada y probada, esto puede ser a causa de que la información emitida es recientemente nueva, ya que data de fechas de este mismo año.
+
+La documentación oficial por parte de Plesk para la solución de Clúster HA (Alta Disponibilidad) data del 8 de marzo de este mismo año, por lo que aún puede estar en proceso de desarrollo.
+El documento oficial en cuestión es el siguiente:
+
+https://www.plesk.com/blog/product-technology/install-plesk-high-availability-cluster/ 
+
+Para el proceso de implementación de un servidor NFS donde se guarden los archivos de los hosts de los dominios en el servidor NFS y que esté sincronizado con Plesk, también presenta varios problemas a la hora del despliegue. Esta documentación data del 6 de febrero de este mismo año.
+El documento oficial en cuestión es el siguiente:
+
+https://www.plesk.com/blog/product-technology/plesk-centralized-database-network-file-system/ 
+
+Y buscando otras soluciones a la hora de desplegar Plesk también he estado viendo que tampoco soportan una configuración de Balanceo de Carga entre servidores.
+
+https://support.plesk.com/hc/en-us/articles/12377106799255-Does-Plesk-support-load-balancing- 
+
+Lo más parecido al balanceo de carga que ofrece Plesk es una extensión llamada Multi Server, que es de pago, pero por lo demás no ofrece más.
+
+https://docs.plesk.com/en-US/onyx/multi-server-guide/about-plesk-multi-server.77093/ 
+
+## 9. Opinión del proyecto
+
+Durante la realización de este proyecto he aprendido bastante sobre el hosting web, la creación y mantenimiento de un servidor propio de hosting donde gestionar diversos dominios, subdominios, cuentas de correo y garantizar la seguridad de estos.
+
+Sinceramente me ha gustado mucho el proceso de realización del proyecto, ya que gracias a esto en caso de querer en algún momento montar un servidor de hosting real ya sabría todo lo necesario para llevar a cabo el proceso, además de poder mantener la seguridad de dominios reales de clientes. 
+También me ha ayudado a realizar el proyecto el hecho de que durante las prácticas en la empresa he estado usando la herramienta de Plesk, así que más o menos me he familiarizado un poco más con Plesk.
+
+
+### La documentación completa está aquí entrando al enlace:
+
+### https://docs.google.com/document/d/1DaEmhxEo-HJpwNPD2dvxkkCa9VTxPVT-Myi8kueDfJI/edit?usp=sharing
