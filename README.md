@@ -194,7 +194,7 @@ sudo ./plesk-installer --select-product-id plesk --select-release-latest --insta
 
 La instalación puede llevar unos 10-15 minutos en completarse.
 
-<img src="images/42.png" width="380"/>
+<img src="images/42.png" width="420"/>
 
 Al terminar la instalación se  realizará la configuración inicial de Plesk a través del CLI (hay que tener en cuenta de que la configuración inicial sólo se puede realizar una vez, si algo falla y no se completa correctamente ya no se podrá volver a hacer a menos que instalemos otro servidor de Plesk).
 
@@ -286,3 +286,44 @@ __Desventajas:__
 ### Creación de dominios
 
 La creación de dominios y mantenimiento de dominios en Plesk se hace de una forma muy cómoda e intuitiva. Tenemos 2 opciones a la hora de crear un dominio:
+
+- Desde la interfaz gráfica: esta forma es la más fácil y rápida para crear un dominio. Se puede crear un dominio en blanco donde subimos nosotros mismos nuestros archivos o podemos crear un sitio que tenga instalado WordPress
+
+    <img src="images/100.png" width="380"/>
+
+    Cuando tengamos claro la forma de crear el dominio le asignamos un nombre y lo vinculamos a una dirección IP.
+
+    <img src="images/101.png" width="380"/>
+
+    <img src="images/102.png" width="380"/>
+
+    Además el dominio lo podemos vincular a la cuenta de un cliente, es decir, 
+	dentro de Plesk podemos crear varios clientes y dentro cada cliente tendrá
+	todos los dominios y subdominios vinculados a él, por otra parte se puede crear 
+	un usuario para el cliente con el que este va a poder gestionar sus dominios, 
+	subdominios y cuentas de correo de forma autónoma sin tener que contactar con
+	el proveedor, en este caso nosotros.
+
+    <img src="images/103.png" width="330"/>
+
+    Una vez tengamos creado el cliente podremos crear una suscripción vinculada a 
+	él dónde se guardarán todos los dominios y subdominios del cliente,
+
+    <img src="images/104.png" width="380"/>
+
+    <img src="images/105.png" width="330"/>
+
+	A la hora de crear subdominios el proceso es similar, sólo que tendremos que
+	indicar el dominio donde queremos que se cree el subdominio.
+
+    <img src="images/106.png" width="380"/>
+
+    Aquí podemos ver todos los dominios y subdominios del cliente.
+
+    <img src="images/107.png" width="380"/>
+
+- Desde CLI: Plesk nos ofrece la opción de crear dominios desde el terminal, esto es muy conveniente en casos cuando se tienen que crear muchos dominios de forma rápida, para ello se puede crear un script de bash donde se puede automatizar la creación de los dominios.
+
+    <img src="images/108.png" width="500"/>
+
+    <img src="images/109.png" width="500"/>
