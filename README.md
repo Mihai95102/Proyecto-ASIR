@@ -452,3 +452,30 @@ Como se puede ver dicho usuario tiene un acceso limitado a la hora de gestionar 
 ## 7. Extensiones de Plesk
 
 Plesk ofrece una gran cantidad de extensiones de seguridad, DNS, copias de seguridad, desarrollo web, etc.
+
+Algunas de las extensiones más interesantes de Plesk son:
+
+- Acronis Backup: es una herramienta de copias de seguridad de pago, aunque ofrece una prueba gratuita.
+
+    <img src="images/181.png" width="500"/>
+
+    Al habilitarse los backups dentro del servidor, podremos acceder a nuestra 
+	cuenta de Acronis para ver los dispositivos vinculados a la cuenta, además
+	desde Plesk podremos ver la configuración asignada en el servidor.
+
+    <img src="images/188.png" width="750"/>
+    <img src="images/189.png" width="500"/>
+
+- Google PageSpeed Insights: extensión de Google que nos da una puntuación en base a la seguridad de nuestra página y a la rapidez de esta.
+
+    <img src="images/190.png" width="750"/>
+
+- SEO Toolkit: herramienta de posicionamiento web para que las páginas que alojamos en nuestros paneles salgan las primeras en el buscador cuando se busque algo relacionado.
+
+    <img src="images/194.png" width="750"/>
+
+	Esta extensión nos permite asignar una serie de palabras clave relacionadas
+	con nuestras páginas para que tenga un mejor posicionamiento en los 
+	buscadores
+
+    <img src="images/195.png" width="750"/>
