@@ -13,7 +13,7 @@ Para llevar a cabo la instalación y despliegue de Plesk, se utilizará el servi
 
 La infraestructura utilizada será la siguiente:
 
-<img src="images/infraesructura.png" width="350"/>
+<img src="images/infraesructura.png" width="400"/>
 
 ### Requisitos de las instancia de Plesk en AWS:
 
@@ -25,13 +25,13 @@ Los requisitos de las instancias serán los mismos para los 2 servidores, tanto 
 
 - __Tamaño de memoria RAM:__ para este proyecto será suficiente con escoger el tipo de memoria “t2.medium” que equivale a 4GB. En caso de tener un servidor de Plesk real si se necesitarán más recursos dependiendo del nivel de carga que se le dará, lo más recomendado para un servidor de Plesk real que se use para administrar un gran número de dominios es mínimo unos 8 o 16 GB de memoria RAM.
 
-    <img src="images/5.png" width="350"/>
+    <img src="images/5.png" width="380"/>
 
 - __Par de claves:__ el par de claves “vockey.pem” de tipo RSA se usará para que sea posible la conexión remota al servidor usando SSH.
 
 - __Configuración de red:__ en este caso se requiere abrir una serie de puertos específicos para que los servidores funcionen correctamente. Para ello se creará un nuevo grupo de seguridad al que se le asignará a las instancias durante su creación.
 
-    <img src="images/6.png" width="350"/>
+    <img src="images/6.png" width="400"/>
     
     Los puertos que se necesitarán abrir en las reglas de entrada son los siguientes:
 
@@ -42,4 +42,4 @@ Los requisitos de las instancias serán los mismos para los 2 servidores, tanto 
 
 - Configuración de almacenamiento: la instalación de Plesk ocupa alrededor  de 10 GB por lo que para tener espacio de sobra ponemos 50 GB de tamaño disco duro.
 
-    <img src="images/8.png" width="350"/>
+    <img src="images/8.png" width="380"/>
