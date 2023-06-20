@@ -156,3 +156,133 @@ Al acabar la ejecución del script, podemos ir a nuestras instancias de AWS y ve
 <img src="images/32.png" width="500"/>
 
 ## 3. Instalación de Plesk
+
+Para la instalación de Plesk tanto en __Local__ como en __Remoto__ crearemos un script de Bash donde automatizamos la instalación.
+
+El script será el siguiente:
+
+```bash
+#!/bin/bash
+
+set -x
+
+# Variables
+source ../vars/variables.sh
+
+# Actualizamos los paquetes
+apt-get update
+
+# Instalamos el comando WGET
+apt-get install wget
+
+# Descargamos el instalador de Plesk usando WGET
+wget https://autoinstall.plesk.com/plesk-installer
+
+# Movemos el instalador de Plesk a /tmp
+mv plesk-installer /tmp
+
+# Entramos a /tmp
+cd /tmp
+
+# Le damos permisos de ejecución al archivo del instalador
+chmod +x ./plesk-installer
+
+# Ejecutamos el instalador de Plesk
+# sudo PLESK_DB_DSN_PREFIX=mysql://plesk1:hola@44.214.48.106/host1_
+sudo ./plesk-installer --select-product-id plesk --select-release-latest --installation-type Recommended
+```
+
+La instalación puede llevar unos 10-15 minutos en completarse.
+
+<img src="images/42.png" width="380"/>
+
+Al terminar la instalación se  realizará la configuración inicial de Plesk a través del CLI (hay que tener en cuenta de que la configuración inicial sólo se puede realizar una vez, si algo falla y no se completa correctamente ya no se podrá volver a hacer a menos que instalemos otro servidor de Plesk).
+
+```bash
+# Configuración postinstalación de Plesk
+plesk bin init_conf --init \
+    -name $NAME \
+    -passwd $PASSWD \
+    -phone $PHONE \
+    -email $EMAIL \
+    -company "SKYNET S.L" \
+    -address "Calle Ave del Paraíso 2" \
+    -city $CITY \
+    -zip $ZIP \
+    -country $COUNTRY \
+    -state $STATE \
+    -trial_license true
+
+# Cambiamos el idioma de la interfaz de Plesk
+mysql -u root -e "use psa; update misc set val='es-ES' where param='def_locale'; update misc set val='es-ES' where param='admin_locale';"
+```
+
+<img src="images/44.png" width="500"/>
+
+Para la instalación en remoto antes de instalar Plesk hay que configurar el servidor de Bases de Datos.
+
+Para configurar el servidor de Bases de Datos vamos a escribir un script dónde se automatizará todo el proceso de configuración:
+
+```bash
+#!/bin/bash
+
+set -x
+
+# Variables
+source ../vars/variables.sh
+
+# Actualizamos los paquetes del sistema
+apt-get update
+
+# Instalamos el servidor de Bases de Datos
+apt-get install mariadb-server -y
+
+# Cambiamos el archivo de configuración de MySQL
+cp conf/50-server.cnf /etc/mysql/mariadb.conf.d/50-server.cnf
+
+# Creamos bases de datos, usuarios y permisos
+mysql -u root -e "CREATE USER '$USUARIOPLESK'@'%' IDENTIFIED BY '$BD_PASS';"
+mysql -u root -e "GRANT ALL ON *.* TO '$USUARIOPLESK'@'%' WITH GRANT OPTION;"
+
+# Reiniciamos el servidor de MySQL
+systemctl restart mysql
+```
+
+Una vez finalizada la configuración del servidor de Bases de Datos, iremos al servidor de Plesk donde instalaremos la herramienta usando el servidor remoto que hemos configurado.
+
+El proceso de despliegue de Plesk en una base de datos remota es el mismo que el despliegue en una base de datos local, la diferencia es que para realizar la instalación a la hora de ejecutar el instalador se definirá una nueva variable en la que se indicará la IP del servidor de Bases de Datos remoto que se quiere usar, el usuario nuevo que hemos creado y su contraseña correspondiente.
+
+<img src="images/50.png" width="500"/>
+
+Al acabarse la instalación podemos comprobar en el servidor de Bases de Datos como se han creado las bases de datos de Plesk.
+
+<img src="images/51.png" width="250"/>
+
+También al acceder al servidor de Plesk Remoto e ir a la sección de Bases de Datos podemos ver cómo está usando el servidor que configuramos previamente en vez del local.
+
+<img src="images/52.png" width="250"/>
+
+<img src="images/53.png" width="380"/>
+
+### Ventajas y desventajas del uso de una Base de Datos Centralizada
+
+Estas son algunas de las ventajas e inconvenientes de la instalación de Plesk en una base de datos centralizada:
+
+__Ventajas:__ 
+
+- Separar los servicios web y de bases de datos permite optimizar cada servidor para las tareas requeridas, por ejemplo, agregar más memoria a los servidores de bases de datos y permitirles utilizar toda la memoria disponible, sin competir con otros servicios.
+
+- Puede usar muchas menos bases de datos para varios servidores Plesk, reduciendo la cantidad de trabajo de mantenimiento de la base de datos.
+
+__Desventajas:__ 
+
+- Si se utiliza una única base de datos para todos los servidores Plesk, la base de datos se convierte en un único punto de error para todos esos servidores Plesk.
+
+
+- La velocidad de la red y la conectividad entre el servidor de la base de datos y Plesk deberían ser lo suficientemente buenas y estables.
+
+## 4. Creación y administración de dominios
+
+### Creación de dominios
+
+La creación de dominios y mantenimiento de dominios en Plesk se hace de una forma muy cómoda e intuitiva. Tenemos 2 opciones a la hora de crear un dominio:
