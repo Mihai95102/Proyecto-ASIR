@@ -468,14 +468,14 @@ Algunas de las extensiones más interesantes de Plesk son:
 
 - Google PageSpeed Insights: extensión de Google que nos da una puntuación en base a la seguridad de nuestra página y a la rapidez de esta.
 
-    <img src="images/190.png" width="750"/>
+    <img src="images/190.png" width="650"/>
 
 - SEO Toolkit: herramienta de posicionamiento web para que las páginas que alojamos en nuestros paneles salgan las primeras en el buscador cuando se busque algo relacionado.
 
-    <img src="images/194.png" width="750"/>
+    <img src="images/194.png" width="500"/>
 
 	Esta extensión nos permite asignar una serie de palabras clave relacionadas
 	con nuestras páginas para que tenga un mejor posicionamiento en los 
 	buscadores
 
-    <img src="images/195.png" width="750"/>
+    <img src="images/195.png" width="720"/>
