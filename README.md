@@ -217,7 +217,7 @@ plesk bin init_conf --init \
 mysql -u root -e "use psa; update misc set val='es-ES' where param='def_locale'; update misc set val='es-ES' where param='admin_locale';"
 ```
 
-<img src="images/44.png" width="500"/>
+<img src="images/44.png" width="750"/>
 
 Para la instalación en remoto antes de instalar Plesk hay que configurar el servidor de Bases de Datos.
 
@@ -252,7 +252,7 @@ Una vez finalizada la configuración del servidor de Bases de Datos, iremos al s
 
 El proceso de despliegue de Plesk en una base de datos remota es el mismo que el despliegue en una base de datos local, la diferencia es que para realizar la instalación a la hora de ejecutar el instalador se definirá una nueva variable en la que se indicará la IP del servidor de Bases de Datos remoto que se quiere usar, el usuario nuevo que hemos creado y su contraseña correspondiente.
 
-<img src="images/50.png" width="500"/>
+<img src="images/50.png" width="750"/>
 
 Al acabarse la instalación podemos comprobar en el servidor de Bases de Datos como se han creado las bases de datos de Plesk.
 
