@@ -397,3 +397,58 @@ Las opciones que ofrece Plesk a la hora de administrar los dominios son las sigu
     También se pueden instalar otras aplicaciones externas cargando el contenido de la aplicación en el administrador de archivos del dominio.
 
     <img src="images/144.png" width="500"/>
+
+## 5. Gestión de correo
+
+Los dominios que gestionemos de nuestros clientes aparte de tener sus diferentes dominios y subdominios, también necesitarán sus propias cuentas de correo, por lo que dentro de cada dominio iremos al apartado de “Correo” y creamos las cuentas de correo necesarias para el cliente.
+
+<img src="images/147.png" width="750"/>
+
+Para crear la cuenta es muy fácil, simplemente le asignamos un nombre a la cuenta de correo y una contraseña.
+
+<img src="images/148.png" width="750"/>
+<img src="images/149.png" width="500"/>
+
+### Importación de correo
+
+Lo primero que necesitamos es saber los datos de la cuenta de correo a importar, como la dirección de correo, la contraseña, el servidor IMAP y SMTP, el puerto que usa y el cifrado que usa. Para saber estos datos tendremos que ir al servidor donde se encuentra la cuenta de correo a importar y ver los datos de la configuración manual de la cuenta.
+
+<img src="images/158.png" width="500"/>
+<img src="images/168.png" width="500"/>
+<img src="images/169.png" width="750"/>
+
+
+Después de introducir los datos del host de origen y sean correctos, la cuenta se sincronizará con el servidor de origen.
+
+<img src="images/170.png" width="750"/>
+
+## 6. Gestión de usuarios y roles
+
+Plesk ofrece la opción de crear distintos usuarios dentro del servidor, esto se puede para dar acceso a nuestros clientes al servidor para que gestionen sus propios dominios, subdominios y cuentas de correo.
+
+Antes de crear cuentas de usuarios tenemos que crear nuevos roles de usuario o usar los que dan ya por defecto el propio Plesk.
+
+<img src="images/171.png" width="750"/>
+
+Hay que tener en cuenta que los clientes no tienen que tener demasiados permisos a la hora de poder gestionar sus dominios. El rol que crearemos para los clientes será el siguiente.
+
+<img src="images/172.png" width="750"/>
+<img src="images/173.png" width="750"/>
+
+Ahora crearemos un nuevo usuario y le asignaremos el rol que acabamos de crear.
+
+<img src="images/174.png" width="750"/>
+<img src="images/175.png" width="750"/>
+
+Una vez creado el usuario vamos a tratar de acceder al servidor con el usuario que hemos creado y ver que se han aplicado los permisos del
+rol de usuario.
+
+<img src="images/176.png" width="750"/>
+
+Como se puede ver dicho usuario tiene un acceso limitado a la hora de gestionar los dominios.
+
+<img src="images/177.png" width="750"/>
+
+## 7. Extensiones de Plesk
+
+Plesk ofrece una gran cantidad de extensiones de seguridad, DNS, copias de seguridad, desarrollo web, etc.
